@@ -32,7 +32,6 @@ router.get("/", (req, res, next) => {
     );
   });
 
-
 });
 
 //inserção de orcamento

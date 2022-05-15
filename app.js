@@ -40,6 +40,7 @@ app.use((req, res, next) => {
 app.use('/subCategorias', rotaSubCategorias);
 app.use('/produtos', rotasProdutos);
 app.use('/orcamento', rotasOrcamento);
+app.use('/orcamentoProdutos', rotasOrcamentoProdutos)
 
 //tratamento de erro rotas
 app.use((req, res, next) => {
