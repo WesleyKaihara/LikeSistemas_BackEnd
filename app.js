@@ -5,8 +5,11 @@ const bodyParser = require('body-parser');
 //criar instancia do express
 const app = express();
 
+//importação das rotas
 const rotaSubCategorias = require('./routes/subCategorias');
 const rotasProdutos = require('./routes/produtos');
+const rotasOrcamentoProdutos = require('./routes/produtosOrcamento');
+const rotasOrcamento = require('./routes/orcamento');
 
 //No ambiente de desenvolvimento faz log dos eventos 
 app.use(morgan('dev'));
@@ -36,6 +39,7 @@ app.use((req, res, next) => {
 //Rotas
 app.use('/subCategorias', rotaSubCategorias);
 app.use('/produtos', rotasProdutos);
+app.use('/orcamento', rotasOrcamento);
 
 //tratamento de erro rotas
 app.use((req, res, next) => {
