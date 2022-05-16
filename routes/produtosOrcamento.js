@@ -172,32 +172,32 @@ router.delete("/", (req, res, next) => {
 
 router.post('/teste', (req, res, next) => {
 
-  res.send(req.body)
-  // mysql.getConnection((error, conn) => {
-  //   if (error) {
-  //     return res.status(500).send({
-  //       error: error
-  //     })
-  //   }
-  //   conn.query(
-  //     `${req.body.mensagem}`,
-  //     //callback da query
-  //     (error, resultado, field) => {
-  //       //liberar conexões
-  //       conn.release();
+  mysql.getConnection((error, conn) => {
+    if (error) {
+      return res.status(500).send({
+        error: error
+      })
+    }
+    conn.query(
+      req.body.queries,
+      //callback da query
+      (error, resultado, field) => {
+        //liberar conexões
+        conn.release();
 
-  //       if (error) {
-  //         return res.status(500).send({
-  //           error: error
-  //         })
-  //       }
+        if (error) {
+          console.log(error)
+          return res.status(500).send({
+            error: error
+          })
+        }
 
-  //       res.status(201).send({
-  //         mensagem: 'Orçamento criada com sucesso'
-  //       })
-  //     }
-  //   );
-  // });
+        res.status(201).send({
+          mensagem: 'Orçamento criado com sucesso'
+        })
+      }
+    );
+  });
 
 });
 
