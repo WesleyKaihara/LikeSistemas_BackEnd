@@ -169,7 +169,7 @@ router.delete("/", (req, res, next) => {
 });
 
 
-router.post('/teste', (req, res, next) => {
+router.post('/criar', (req, res, next) => {
 
   mysql.getConnection((error, conn) => {
     if (error) {

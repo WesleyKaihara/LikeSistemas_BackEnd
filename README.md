@@ -9,6 +9,7 @@
 
 ### OBS: Arquivo com informações de acesso ao banco de dados é privado ( nodemon.json )
 
+- criar arquivo nodemon.js e criar a conexão com os requisitos abaixo
 
 ``` json
 {
@@ -22,3 +23,14 @@
 }
 
 ```
+
+# Postman 
+- CRUD orçamentos
+
+- CRUD produtos 
+
+- CRUD subCategorias
+
+- CRUD Clientes
+
+![Rotas Postman](/images/PostmanRotas.png)
