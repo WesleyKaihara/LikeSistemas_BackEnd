@@ -159,9 +159,8 @@ router.delete("/", (req, res, next) => {
           });
         }
 
-        res.status(202).send({
-          mensagem: 'produto deletado com sucesso'
-        });
+        res.redirect(201, "back")
+
       }
     );
   });

@@ -13,7 +13,7 @@ router.get("/", (req, res, next) => {
       })
     }
     conn.query(
-      'SELECT * FROM produto',
+      'SELECT produto.ID,produto.NOME,produto.VALOR,SUBCATEGORIA.NOME as SUBCATEGORIA FROM produto INNER JOIN subCategoria ON produto.SUBCATEGORIA = subcategoria.ID',
       //callback da query
       (error, resultado, field) => {
         //liberar conexões
@@ -58,10 +58,7 @@ router.post('/', (req, res, next) => {
           })
         }
 
-        res.status(201).send({
-          mensagem: 'Produto criado com sucesso',
-          ID: resultado.insertId,
-        })
+        res.redirect(201, 'back');
       }
     );
   });

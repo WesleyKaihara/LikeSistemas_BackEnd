@@ -58,11 +58,7 @@ router.post('/', (req, res, next) => {
           })
         }
 
-        res.status(201).send({
-          mensagem: 'subCategoria criada com sucesso',
-          ID: resultado.insertId,
-          nome: resultado.nome
-        })
+        res.redirect(201, '/subcategorias');
       }
     );
   });
@@ -133,8 +129,6 @@ router.patch("/", (req, res, next) => {
       }
     );
   });
-
-
 });
 
 //deleta subCategoria
@@ -169,6 +163,7 @@ router.delete("/", (req, res, next) => {
 
 
 });
+
 
 
 module.exports = router;
